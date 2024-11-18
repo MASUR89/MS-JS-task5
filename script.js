@@ -42,9 +42,6 @@ function addTask() {
     deleteButton.className = "delete-button";
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", function () {
-        if (taskItem.classList.contains("completed")) {
-            completedCount--;
-        }
         taskList.removeChild(taskItem);
         taskCount--;
         updateCounters();
