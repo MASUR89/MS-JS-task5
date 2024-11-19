@@ -43,6 +43,9 @@ function addTask() {
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", function () {
         taskList.removeChild(taskItem);
+        if (taskItem.classList.contains("completed")) {
+            completedCount--;
+        }
         taskCount--;
         updateCounters();
     });
@@ -61,4 +64,4 @@ function updateCounters() {
     completedTasks.textContent = `Completed tasks: ${completedCount}`;
 }
 
-document.querySelector(".input-section button").addEventListener("click", addTask);
+document.querySelector(".input-section button").addEventListener("click", addTask)
